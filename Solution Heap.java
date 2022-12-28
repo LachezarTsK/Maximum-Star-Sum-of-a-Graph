@@ -1,5 +1,4 @@
 
-import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class Solution {
@@ -36,10 +35,10 @@ public class Solution {
     private int calculateMaxStarSum(int[] nodeValues, int totalNodes) {
         int maxStarSum = Integer.MIN_VALUE;
         for (int i = 0; i < totalNodes; ++i) {
-            int sum = nodeValues[i]
-                    + Arrays.stream(graph_nodeID_to_nodeValues[i]
-                            .toArray(new Integer[graph_nodeID_to_nodeValues[i].size()]))
-                            .reduce((x, y) -> x + y).orElse(0);
+            int sum = nodeValues[i];
+            for (int value : graph_nodeID_to_nodeValues[i]) {
+                sum += value;
+            }
             maxStarSum = Math.max(maxStarSum, sum);
         }
         return maxStarSum;
