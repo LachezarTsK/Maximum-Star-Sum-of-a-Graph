@@ -11,7 +11,7 @@ class Solution {
     vector<priority_queue<int, vector<int>, greater<>>> graph_nodeID_to_nodeValues;
     
 public:
-    int maxStarSum(const vector<int>& nodeValues, const vector<vector<int>>&edges, int maxNumberOfEdges) {
+    int maxStarSum(const vector<int>& nodeValues, const vector<vector<int>>& edges, int maxNumberOfEdges) {
         const size_t totalNodes = nodeValues.size();
         graph_nodeID_to_nodeValues.resize(totalNodes);
 
